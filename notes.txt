@@ -1,0 +1,18 @@
+Classes
+	Game
+	-Board
+	-2 Players
+
+	Player
+	-Piece type
+	-Wins
+	-Losses
+
+	Board
+	-Pieces
+	-Rows
+	-Columns
+
+	Piece
+	-Type
+	-Position
