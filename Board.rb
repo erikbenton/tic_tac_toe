@@ -21,6 +21,12 @@ class Board
 		puts ""
 	end
 
+	def draw_spacer
+		@pieces[row].each do |entry|
+			print "| #{entry} "
+		end
+	end
+
 	def draw_row(row)
 		@pieces[row].each do |entry|
 			print "| #{entry} "
