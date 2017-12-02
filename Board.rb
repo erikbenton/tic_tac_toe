@@ -11,8 +11,12 @@ class Board
 	end
 
 	def add_piece(piece_type, row, col)
-		@pieces[row-1][col-1] = piece_type
-		@number_of_pieces += 1;
+		if row <= @side_length && col <= @side_length &&  @pieces[row-1][col-1] == " "
+			@pieces[row-1][col-1] = piece_type
+			@number_of_pieces += 1;
+			return true
+		end
+			return false
 	end
 
 	def draw_board
@@ -23,7 +27,7 @@ class Board
 
 	def draw_spacer
 		@pieces[row].each do |entry|
-			print "| #{entry} "
+			print " -"
 		end
 	end
 
