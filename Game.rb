@@ -83,10 +83,22 @@ game = Game.new("X", "O")
 
 isGameOver = false
 
+count = 0
+current_player = ""
+
 game.board.draw_board
 
 while(!isGameOver)
-	game.player_prompt(game.player_one)
+
+	if(count%2 == 0)
+		current_player = game.player_one
+	else
+		current_player = game.player_two
+	end
+	game.player_prompt(current_player)
 	game.board.draw_board
-	isGameOver = game.check_for_win(game.player_one.piece_type)
+	isGameOver = game.check_for_win(current_player.piece_type)
+	count += 1
 end
+
+puts "#{current_player.piece_type}'s is the winner!"
